@@ -1,0 +1,172 @@
+
+
+                        Logging
+
+
+    🏆 Purpose: Record progress and problems
+
+
+
+‼️ Levels:  NotSet, 
+            Debug, 
+            Info, 
+            Warning, 
+            Error, 
+            Critical
+
+
+📌 Пример лог файла:
+
+11/25/2022 22:51:54 - <test case name> - ERROR - This is error message
+11/25/2022 22:51:54 - <test case name> - INFO - This is info message
+
+
+★★★★★★★★★★★     ★★★★★★★★★★★     ★★★★★★★★★★★
+
+
+1️⃣     создаем файл: test_example.py
+
+
+def test_loggingDemo():
+    logger = logging.getLogger(__name__)
+
+    fileHandler = logging.FileHandler('logfile.log')
+    formatter = logging.Formatter("%(asctime)s :%(levelname)s : %(name)s :%(message)s")
+    fileHandler.setFormatter(formatter)
+    logger.addHandler(fileHandler)  #filehandler object
+
+    logger.setLevel(logging.CRITICAL)
+
+
+    logger.debug("A debug statement is executed")
+    logger.info("Information statement")
+    logger.debug("A debug statement is executed")
+    logger.warning("Something is in warning mode")
+    logger.error("A Major error has happend")
+    logger.critical("Critical issue")
+
+
+▫️ При запуске test_example.py файла в файле <logfile.log> будет отображено => 
+
+    2022-11-30 11:59:29,283 :CRITICAL : logger.test_example :Critical issue
+
+
+Чтобы в файле было отражено больше логов, тогда необходимо изменить => setLevel. Если setLevel выставлен как Error то все выше стоящие уровни не будут отражены в лог файле => (Debug, Info, Warning)
+
+
+🔻 logger.setLevel(logging.INFO)
+
+
+★★★★★★★★★★★     ★★★★★★★★★★★     ★★★★★★★★★★★
+
+
+import logging
+import math
+
+
+# Create and configure logger
+
+LOG_FORMAT = "%(asctime)s %(levelname)s %(name)s %(message)s "
+logging.basicConfig(filename="/Users/$User_name/Desktop/logger/Lumberjack.log",   ⚡️ # директория где находится лог
+                    level=logging.DEBUG,                                          ⚡️ setLevel
+                    format=LOG_FORMAT,
+                    filemode='w',
+                    datefmt='%m/%d/%Y %H:%M:%S')
+logger = logging.getLogger(__name__)
+
+
+def quadratic_formula(a, b, c):
+    ''' Return the solutions to the equation ax^2 + bx + c = 0.'''
+    logger.info("quadratic_formula({0}, {1}, {2})". format(a,b,c))
+    # Compute the discriminant
+    logger.debug("#Compute the discriminant")
+    disc = b**2 - 4*a*c
+
+    # Compute the two roots
+    logger.debug("# Compute the two roots")
+    root1 = (-b + math.sqrt(disc)) / (2*a)
+    root2 = (-b - math.sqrt(disc)) / (2*a)
+
+    # Return the roots
+    logger.error("# Return the roots")
+    return (root1, root2)
+
+
+def division(a, b):
+    try:
+        sum = a / b
+    except Exception as e:
+        logger.critical("Exception occured: ", exc_info = True)
+    return sum
+
+
+roots = quadratic_formula(1, 0, -4)
+print(roots)
+
+a = division(2, 1)
+print(a)
+
+
+👁 Output in Lumberjack.log: 
+
+11/30/2022 12:43:26 INFO __main__ quadratic_formula(1, 0, -4) 
+11/30/2022 12:43:26 DEBUG __main__ #Compute the discriminant 
+11/30/2022 12:43:26 DEBUG __main__ # Compute the two roots 
+11/30/2022 12:43:26 ERROR __main__ # Return the roots 
+
+
+
+★★★★★★★★★★★     ★★★★★★★★★★★     ★★★★★★★★★★★
+
+
+2️⃣     Нам необходимо интегрировать logger в наши html reports.
+
+
+☀️ создадим файл или добавим в base_setup файл, где у нас находятся все наши функции
+
+import inspect
+import logging
+
+
+class BaseClass:
+
+    def getLogger(self):
+        loggerName = inspect.stack()[1][3]
+        logger = logging.getLogger(loggerName)
+        fileHandler = logging.FileHandler('logfile.log')
+        formatter = logging.Formatter("%(asctime)s :%(levelname)s : %(name)s :%(message)s")
+        fileHandler.setFormatter(formatter)
+
+        logger.addHandler(fileHandler)  # filehandler object
+
+        logger.setLevel(logging.DEBUG)
+        return logger
+
+
+
+☀️ в файле где мы пишем наши тесты
+
+import pytest
+
+from <file_name>.BaseClass import BaseClass
+
+
+class TestExample(BaseClass):
+
+    def test_editProfile(self):
+        log = self.getLogger()
+
+        log.info(dataLoad[0])
+        print(dataLoad[0])          => 
+
+        ⚠️ теперь вывод печати в консоле нам больше не нужен. Все будет отражаться в лог файле
+        
+
+
+
+
+$ py.test --html=report.html -s
+
+Теперь в html репорте будут отражены все логи для каждого теста.
+
+
