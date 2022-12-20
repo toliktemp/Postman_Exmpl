@@ -1,0 +1,544 @@
+
+Objects => In Python, everything is an object.
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+*** 🔻  class 🔺
+
+ class => User defined objects are created using the class keyword. 
+
+▪️ The class is a blueprint that defines the nature of a future object. 
+
+▪️ From classes we can construct instances. 
+
+▪️ An instance is a specific object created from a particular class. 
+
+▪️ An attribute is a characteristic of an object. 
+
+▪️ A method is an operation we can perform with the object.
+
+For example, we can create a class called Dog. 
+
+An attribute of a dog may be its breed or its name, while a method of a dog may be defined by a .bark() method which returns a sound.
+
+
+▪️Attributes
+The syntax for creating an attribute is:
+
+self.attribute = something
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+*** 🔻  The __init__( ) Function 🔺
+
+    The __init__ function is a special method in Python classes. 
+    
+🔺It is known as the constructor method and is called when an object of the class is created.
+
+Here is an example of a class with an __init__ method:
+
+
+class Dog:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+dog1 = Dog("Fido", 3)
+
+print(dog1.name)  # Output: "Fido"
+print(dog1.age)   # Output: 3
+
+
+🔺 The __init__ method has the self parameter, which is a reference to the object itself. 
+
+🔺 The object is passed to the self parameter automatically when an object is created. 
+
+🔺You can then use the self parameter to set attributes of the object, as shown in the example above.
+
+The __init__ method is called automatically every time an object of the class is created, so it is a good place to put any code that you want to run when an object is created. 
+
+This can include initializing variables, setting up data structures, and more.
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+ *** 🔻 An object method is a function that is associated with a particular object and is accessed using the dot  notation. 🔺
+
+Methods are functions defined inside the body of a class. They are used to perform operations with the attributes of our objects. Methods are a key concept of the OOP paradigm. They are essential to dividing responsibilities in programming, especially in large applications.
+
+You can basically think of methods as functions acting on an Object that take the Object itself into account through its self argument.
+
+
+Here is an example of an object method:
+
+
+class Dog:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print("Woof!")
+
+▪️ dog1 = Dog("Fido", 3)
+
+▪️ dog1.bark()  		# Output: "Woof!"
+
+In this example, the bark method is an object method of the Dog class. 
+
+❗️ It is defined using the def keyword and is associated with the object using the self parameter. 
+
+❗️ The bark method can be called on an object of the Dog class using the dot notation => (e.g., dog1.bark() ).
+
+Object methods are useful for encapsulating behavior that is specific to a particular object. 
+They allow you to define the actions that an object can perform and the ways in which it can interact with other objects.
+
+
+
+class Circle:
+    ‣ pi = 3.14
+
+    # Circle gets instantiated with a radius (default is 1)
+    def __init__(self, radius=1):
+        self.radius = radius 
+        self.area = radius * radius * Circle.pi		=> reference to the class level attribute
+        	# self.area = radius * radius * self.pi
+
+
+    # Method for resetting Radius 
+    def setRadius(self, new_radius):
+        self.radius = new_radius
+  ‣     self.area = new_radius * new_radius * self.pi
+  		# self.area = new_radius * new_radius * Circle.pi 
+        
+
+    # Method for getting Circumference
+    def getCircumference(self):
+ ‣      return self.radius * self.pi * 2
+		# return self.radius * Circle.pi * 2
+
+c = Circle()
+
+print('Radius is: ',c.radius)
+print('Area is: ',c.area)
+print('Circumference is: ',c.getCircumference())
+
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+*** 🔻  The self Parameter  🔺
+
+The self parameter is a special parameter that is used to reference the current object in object-oriented programming. 
+
+It is passed automatically to object methods when they are called, and it is used to access the object's attributes and methods.
+
+Here is an example of a class with an object method that uses the self parameter:
+
+
+class Dog:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+
+    def bark(self):
+        print("Woof!")
+        
+
+dog1 = Dog("Fido", 3)
+
+dog1.bark()  # Output: "Woof!"
+
+▪️ In this example, the bark method is an object method of the Dog class. It is defined using the def keyword and is associated with the object using the self parameter. 
+
+▪️The self parameter is passed automatically when the bark method is called on an object of the Dog class (e.g., dog1.bark()).
+
+▪️ The self parameter is useful for accessing the object's attributes and methods within the object method. 
+
+For example, you can use the self parameter to access the name and age attributes of the Dog object, like this:
+
+
+class Dog:
+
+	# Class Object Attribute		=> same for any instance of a class
+‣	species = 'mammal'
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+	# Operations / Actions => Methods
+▪️    def bark(self):
+ ‣     	    print(f"{self.name} says Woof!")
+        	    
+
+dog1 = Dog("Fido", 3)
+
+dog1.bark()  # Output: "Fido says Woof!"
+
+
+▪️ In this example, the bark method uses the self parameter to access the name attribute of the Dog object and prints a message using the object's name.
+
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+*** 🔻 Inheritance  🔺
+
+▪️  Inheritance is a way to create a new class that is a modified version of an existing class. 
+		√ Inheritance allows us to define a class that inherits all the methods and properties from another class.
+
+▪️ Parent class is the class being inherited from, also called base class.
+
+▪️ Child class is the class that inherits from another class, also called derived class.
+		√ The new class is called the derived class, and the existing class is the base class. 
+
+▪️ The derived class inherits attributes and behaviors from the base class, and can also have additional attributes and behaviors of its own.
+
+
+
+
+class BaseClass:
+
+    def __init__(self, value):
+        self.value = value
+
+
+
+class DerivedClass(BaseClass):
+
+    def __init__(self, value, extra_value):
+‣       super().__init__(value)
+        self.extra_value = extra_value
+        
+        
+In this example, the DerivedClass is a derived class that inherits from the BaseClass. 
+
+It has an additional attribute called extra_value, in addition to the value attribute inherited from the BaseClass. 
+
+▪️ super() function that will make the child class inherit all the methods and properties from its parent
+
+
+You can then create an instance of the DerivedClass and access both the inherited value attribute and the additional extra_value attribute:
+
+
+obj = DerivedClass(10, 20)
+
+print(obj.value)  # prints 10
+print(obj.extra_value)  # prints 20
+
+
+Inheritance is a powerful feature of object-oriented programming that allows you to create a new class that is a modified version of an existing class, without having to modify the existing class itself. 
+
+This can help you to reuse code and avoid duplication of effort.
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+***🔻  Инкапсуляция 🔺
+
+
+Инкапсуляция - это один из основных принципов ООП (объектно-ориентированного программирования). 
+
+▪️ Она означает сокрытие деталей реализации объекта или класса от пользователей этого объекта или класса.
+
+▪️ В Python, инкапсуляция может быть реализована с помощью концепции приватных свойств и методов. 
+
+▪️ Приватные свойства и методы начинаются с двух нижних подчеркиваний (__). 
+
+▪️ Приватные свойства и методы недоступны напрямую извне класса, но могут быть вызваны с помощью публичных методов.
+
+Например:
+
+class MyClass:
+
+    def __init__(self):
+        self.__private_property = "I am private"
+        
+    
+    def __private_method(self):
+        print("I am a private method")
+        
+    
+    def public_method(self):
+        print(self.__private_property)
+‣       self.__private_method()
+
+
+obj = MyClass()
+
+print(obj.__private_property)  # AttributeError: 'MyClass' object has no attribute '__private_property'
+
+obj.__private_method()  # AttributeError: 'MyClass' object has no attribute '__private_method'
+
+obj.public_method()  # prints "I am private" and "I am a private method"
+
+
+
+
+class MyClass:
+
+    def __init__(self):
+        self.__private_property = "I am private"
+    
+    
+    def __private_method(self):
+        print("I am a private method")
+        
+    
+    def public_method(self):
+        print(self.__private_property)
+        self.__private_method()
+        
+
+obj = MyClass()
+
+print(obj.__private_property) 	 # AttributeError: 'MyClass' object has no attribute '__private_property'
+
+obj.__private_method()  			# AttributeError: 'MyClass' object has no attribute '__private_method'
+
+obj.public_method()  				# prints "I am private" and "I am a private method"
+
+
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+***🔻 Полиморфизм 🔺
+
+
+Полиморфизм - это один из основных принципов ООП (объектно-ориентированного программирования). 
+
+▪️ Он означает, что один и тот же интерфейс может использоваться различными типами объектов или классами, каждый из которых реализует этот интерфейс по-своему. Способность объекта или класса использовать различные формы поведения в зависимости от контекста.
+
+▪️ В Python, полиморфизм может быть реализован с помощью наследования, абстрактных базовых классов и интерфейсов.
+
+	√ полиморфизм может быть реализован с помощью наследования и перегрузки методов.
+	
+	
+▪️ Наследование - это концепция, которая позволяет одному классу (называемому потомком) наследовать свойства и методы другого класса (называемого родителем). 
+
+▪️ Потомок может переопределять или расширять реализацию родительских методов.
+
+▪️ Перегрузка методов - это концепция, которая позволяет одному методу иметь различную реализацию в зависимости от аргументов, которые он принимает.
+
+
+Например:
+
+
+class Animal:
+    def speak(self):
+        raise NotImplementedError("Subclass must implement this method")
+        
+
+class Dog(Animal):
+    def speak(self):
+        print("Woof!")
+        
+
+class Cat(Animal):
+    def speak(self):
+        print("Meow!")
+        
+
+animals = [Dog(), Cat()]
+
+for animal in animals:
+    animal.speak()
+
+
+# Output:
+# Woof!
+# Meow!
+
+В этом примере класс Animal является абстрактным базовым классом, который содержит абстрактный метод speak, который должен быть реализован в подклассах. Классы Dog и Cat являются подклассами Animal и реализуют метод speak по-своему.
+
+
+
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+
+    @abstractmethod
+    def area(self):
+        pass
+
+
+class Rectangle(Shape):
+
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return self.width * self.height
+        
+
+class Circle(Shape):
+
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return 3.14 * self.radius ** 2
+        
+
+shapes = [Rectangle(10, 20), Circle(5)]
+
+for shape in shapes:
+    print(shape.area())  # prints 200 and 78.5
+
+
+В данном примере класс Shape является абстрактным базовым классом, а классы Rectangle и Circle являются его потомками. Оба класса реализуют метод area, но у них разные реализации этого метода.
+
+
+
+🔺 В чем заключается принцип полиморфизма?
+
+полиморфизм - позволяющий вызовом переопределённого метода через переменную класса-родителя получить поведение, которое будет соответствовать реальному классу-потомку, на который ссылается эта переменная.
+
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢ ▪️
+
+***🔻 Наследование 🔺
+
+Наследование — это способность объекта принимать одну или несколько характеристик от других классов объектов, обычно переменных или функций-членов. 
+
+Наследование подразумевает то, что дочерний класс содержит все атрибуты родительского класса, при этом некоторые из них могут быть переопределены или добавлены в дочернем.
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def speak(self):
+        print("I am an animal")
+
+class Predator:
+    def __init__(self):
+        self.prey = []
+    
+    def hunt(self, prey):
+        self.prey.append(prey)
+
+class Lion(Animal, Predator):
+    def speak(self):
+        print("Roar!")
+
+lion = Lion("Simba")
+lion.speak()  # prints "Roar!"
+lion.hunt("gazelle")
+print(lion.prey)  # prints ["gazelle"]
+
+
+В этом примере класс Lion наследуется от классов Animal и Predator, и получает все свойства и методы обоих родителей. Также он может переопределять реализацию методов родителей, так как имеет свою собственную реализацию метода speak.
+
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+
+*** 🔻  Parameters & Arguments 🔺
+
+🔻 In Python, parameters are variables that are defined in the function definition and receive values when the function is called. 
+
+🔺 Arguments are the values that are passed to the function when it is called.
+
+Here is an example of a function with parameters:
+
+
+def greet(name, greeting):
+    print(f"{greeting}, {name}!")
+
+In this example, name and greeting are the parameters of the greet function. When the function is called, the values passed to it are known as arguments.
+
+
+For example, when we call the function like this:
+
+
+greet("Alice", "Hello")
+
+The string "Alice" is the argument for the name parameter and the string "Hello" is the argument for the greeting parameter.
+
+🔺 So, to summarize: parameters are the variables defined in the function definition, and arguments are the values passed to the function when it is called.
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+***🔻 Setting type attributes 🔺
+
+You can set attributes (i.e., variables associated with an object) on an object by simply assigning a value to a variable with the same name as the attribute you want to set. For example:
+
+
+class MyClass:
+    def __init__(self):
+        self.attribute = 0
+        
+
+obj = MyClass()
+obj.attribute = 10
+
+print(obj.attribute)  # Output: 10
+
+
+▪️ In the example above, obj is an instance of the MyClass class, and attribute is an attribute of the obj object. 
+We set the value of attribute to 10 using the assignment operator (=).
+
+▪️ You can also set attributes on an object using the setattr function, which takes the object, the attribute name, and the value as arguments. For example:
+
+
+▪️ setattr(obj, "attribute", 10) 		=>
+
+This is equivalent to the previous example where we set the attribute using the assignment operator.
+
+
+🔻 It's important to note that in Python, attributes are not the same as class variables. 
+
+
+🔻 Class variables are variables that are shared among all instances of a class, whereas attributes are specific to each individual instance of a class. For example:
+
+
+class MyClass:
+    class_variable = 0
+
+    def __init__(self):
+        self.attribute = 0
+        
+
+obj1 = MyClass()
+obj2 = MyClass()
+
+obj1.attribute = 10
+obj2.attribute = 20
+
+print(obj1.attribute)  						# Output: 10
+print(obj2.attribute)  						# Output: 20
+
+print(MyClass.class_variable)  		# Output: 0
+
+MyClass.class_variable = 30
+
+print(MyClass.class_variable)  		# Output: 30
+
+print(obj1.class_variable)  				# Output: 30
+
+print(obj2.class_variable)  				# Output: 30
+
+
+In the example above, obj1 and obj2 are both instances of the MyClass class.
+ 
+We set the value of the attribute attribute for each object individually, so the values of obj1.attribute and obj2.attribute are different. On the other hand, the class_variable class variable is shared among all instances of the MyClass class, so setting the value of MyClass.class_variable affects the value of obj1.class_variable and obj2.class_variable.
+
+
+
+➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢   ➢
+
+***🔻  🔺
