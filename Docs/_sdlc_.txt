@@ -1,0 +1,199 @@
+
+☀️ What is the software development life cycle?
+
+The software development life cycle is a process used to plan, design, develop, test, release and maintain software.
+
+
+☀️ Validation
+
+📌 To ensure that the product actually meets the user’s needs and that the specifications were correct in the first place. 
+
+The process of evaluating software during or at the end of the development process to determine whether it satisfies specified business requirements.
+
+In other words, to demonstrate that the product fulfills its intended use when placed in its intended environment.
+
+
+☀️ Verification
+
+📌 To ensure that the product is being built according to the requirements and design specifications.
+
+The process of evaluating work-products (not the actual final product) of a development phase to determine whether they meet the specified requirements for that phase.
+
+In other words, to ensure that work products meet their specified requirements.
+
+********** 	********** 	**********
+
+
+☀️ Functional testing:
+Unit, Acceptance, Regression, Integration, Sanity, System, Validation and Verification.
+
+☀️ Non-Functional testing:
+Install testing, Recovery, Reliability, Usability, Compliance, Localization, Compatibility, Security, Stress testing.
+
+
+
+********** 	********** 	**********
+
+☀️	What is API?
+
+https://www.guru99.com/api-testing.html
+
+☀️ API (Application Programming Interface) is a computing interface which enables communication and data exchange between two separate software systems. Software system that executes an API includes several functions/subroutines that another software system can perform. API defines requests that can be made, how to make requests, data formats that can be used, etc. between two software systems.
+
+
+☀️  What is API Testing?
+
+API TESTING is a software testing type that validates Application Programming Interfaces (APIs).
+In API Testing, instead of using standard user inputs(keyboard) and outputs, you use software to send calls to the API, get output, and note down the system’s response. API tests are very different from GUI Tests and won’t concentrate on the look and feel of an application.
+
+
+☀️	Types of Output of an API
+	
+An output of API could be: 
+
+	Any type of data
+	Status (say Pass or Fail)
+	Call another API function.
+
+
+
+********** 	********** 	**********
+
+
+	☀️ SDLC
+	
+1. Planning
+
+This is the first phase in the systems development process. It identifies whether or not there is the need for a new system to achieve a business"s strategic objectives. This is a preliminary plan (or a feasibility study) for a company"s business initiative to acquire the resources to build on an infrastructure to modify or improve a service. The company might be trying to meet or exceed expectations for their employees, customers and stakeholders too. The purpose of this step is to find out the scope of the problem and determine solutions. Resources, costs, time, benefits and other items should be considered at this stage.
+
+2. Systems Analysis and Requirements
+
+The second phase is where businesses will work on the source of their problem or the need for a change. In the event of a problem, possible solutions are submitted and analyzed to identify the best fit for the ultimate goal(s) of the project. This is where teams consider the functional requirements of the project or solution. It is also where system analysis takes place—or analyzing the needs of the end users to ensure the new system can meet their expectations. Systems analysis is vital in determining what a business"s needs are, as well as how they can be met, who will be responsible for individual pieces of the project, and what sort of timeline should be expected.
+
+There are several tools businesses can use that are specific to the second phase. They include:
+
+    CASE (Computer Aided Systems/Software Engineering)
+    Requirements gathering
+    Structured analysis
+
+3. Systems Design
+
+The third phase describes, in detail, the necessary specifications, features and operations that will satisfy the functional requirements of the proposed system which will be in place. This is the step for end users to discuss and determine their specific business information needs for the proposed system. It"s during this phase that they will consider the essential components (hardware and/or software) structure (networking capabilities), processing and procedures for the system to accomplish its objectives.
+
+4. Development
+
+The fourth phase is when the real work begins—in particular, when a programmer, network engineer and/or database developer are brought on to do the major work on the project. This work includes using a flow chart to ensure that the process of the system is properly organized. The development phase marks the end of the initial section of the process. Additionally, this phase signifies the start of production. The development stage is also characterized by instillation and change. Focusing on training can be a huge benefit during this phase.
+
+5. Integration and Testing
+
+The fifth phase involves systems integration and system testing (of programs and procedures)—normally carried out by a Quality Assurance (QA) professional—to determine if the proposed design meets the initial set of business goals. Testing may be repeated, specifically to check for errors, bugs and interoperability. This testing will be performed until the end user finds it acceptable. Another part of this phase is verification and validation, both of which will help ensure the program"s successful completion.
+
+6. Implementation
+
+The sixth phase is when the majority of the code for the program is written. Additionally, this phase involves the actual installation of the newly-developed system. This step puts the project into production by moving the data and components from the old system and placing them in the new system via a direct cutover. While this can be a risky (and complicated) move, the cutover typically happens during off-peak hours, thus minimizing the risk. Both system analysts and end-users should now see the realization of the project that has implemented changes.
+
+7. Operations and Maintenance
+
+The seventh and final phase involves maintenance and regular required updates. This step is when end users can fine-tune the system, if they wish, to boost performance, add new capabilities or meet additional user requirements.
+
+***********
+
+
+    Stage 1: Planning – In this stage the Project Manager (PM) and staff are “planning” for the project or enhancement by building a project management plan and determining  scope of the work. Think of this as baking prep: What to bake, when to bake and why you are preparing to bake.
+    
+    Stage 2: Analysis & Requirements – In this stage the Business Systems Analyst (BSA) is reviewing project scope to formulate the business requirements and create the requirements documentation – business / functional – for the implementation team.  Gathering of the baking ingredients, and determine the ingredients for baking the requested item.
+    
+    Stage 3: Design – Using the requirements input from the BSA the lead software developer or Technical Lead (TL) architects the software solution to meet the business requirements.  Think of this step as creating the recipe to bake based on the baking item requested during the requirements stage.
+    
+    Stage 4: Implementation (Coding) – Baking! Using the recipe developed by the TL; the development team begins coding and unit testing to ensure the outcome meets the requirements and the design previously documented.
+    
+    Stage 5: Testing and Integration – Time to eat…..the testing is typically done by Quality Assurance (QA) individual and his/her role is to ensure the outcome of the code developed meets the requirements as described during Stage 2 by the BSA.  Inspecting the baked item to ensure it meets requirements such as a choclate cake with vanilla frosting as intended.
+    
+    Stage 6: Maintenance:  Once the project is completed and is in a steady state a separate managed services team is tasked with keeping the solution running.
+
+****
+
+☀️ Difference between Verification and Validation. 
+
+The distinction between the two terms is largely to do with the role of specifications. 
+
+📌 Validation is the process of checking whether the specification captures the customer's needs. ... 
+
+📌 Verification is the process of checking that the software meets the specification
+
+
+           
+1. Verification is a static practice of verifying documents, design, code and program.	
+1. Validation is a dynamic mechanism of validating and testing the actual product.
+
+
+Validation is the process of checking whether the specification captures the customer’s needs. “Did I build what I said I would?”
+
+Verification is the process of checking that the software meets the specification.  “Did I build what I need?”
+
+**************
+
+🌞 Reverse Engineering 
+Attempting to reconstruct the logical data model from a physical data model. This is hard because not every database engine has the means to store the interdependencies between objects in a logical model, and sometimes these relationships are lost altogether. This information has to be somehow recovered by analyzing the data and inferring the missing relationships.
+
+
+🌞 Integration Testing
+Testing of all integrated modules to verify the combined functionality after integration is termed as Integration Testing. Modules are typically code modules, individual applications, client and server applications on a network, etc. This type of testing is especially relevant to client/server and distributed systems.
+
+
+🌞 Regression Testing
+Testing an application as a whole for the modification in any module or functionality is termed as Regression Testing.
+
+🌞 Negative Testing
+A negative testing technique is performed using incorrect data, invalid data or input. It validates that if the system throws an error of invalid input and behaves as expected.
+
+
+🌞 Unit Testing
+Testing of an individual software component or module is termed as Unit Testing.This requires detailed knowledge of the application, design and code. 
+ 
+
+🌞 Stress Testing
+This testing is done when a system is stressed beyond its specifications in order to check how and when it fails. This is performed under heavy load like putting large number beyond storage capacity, complex database queries, continuous input to the system or database load.
+
+
+🌞 What are the principles of Agile Software Development?
+
+1. Highest priority is to satisfy the customer through early and continuous delivery of business valuable software
+2. Welcome changing requirements, even late in development
+3. Deliver working software frequently
+4. Business people and developers must work together with transparency on daily basis throughout the project
+5. Build projects around motivated individuals
+6. The best form of communication is to do face-to-face conversation
+7. Working software is the primary measure of progress
+8. Able to maintain a constant pace
+9. Continuous attention to technical excellence
+10. Simplicity – the art of maximizing the amount of work not done – is essential
+11. Self-organizing teams
+12. At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly
+
+In Agile Methodology, testing is not a phase like other traditional models. It is an activity parallel to development in the Agile. The time slot for the testing is less in the Agile compared to the traditional models. The testing team works on small features in Agile whereas the test team works on a complete application after development in the traditional models.
+
+In what way does agile development methodology differ from other development methodologies?
+
+In Agile methodology, the code is broken down into small branches and only one branch is developed and tested at a time. At one particular time, only one particular branch is developed and tested. Agile teams follow several processes in the agile methodology like continuous communication with the team, frequent changes to get the optimal results etc. This makes the agile process more flexible and focused. This is not the case with other development methodologies.
+
+🌞 When do we use Agile Scrum Methodology?
+
+i. When the client is not so clear on requirements
+ii. When the client expects quick releases
+iii. When the client doesn’t give all the requirements at a time
+
+
+
+🌞 What are the disadvantages of the agile model?
+
+Some of the disadvantages of using the agile model are as follows:
+
+It is not easy to predict. When you encounter a large project, it becomes more problematic to estimate the amount of effort needed in the project
+In case the guidelines given by the customers is not understood properly, then the final outcome of the project will not meet the customer requirements. It leads to the customer dissatisfaction
+It is not possible to properly focus on the design and documentation of a project sometimes
+Basically, High-level decision making is in the hands of the higher authorities. The team members with little or no experience are not involved in decision-making, thus they don’t get a chance to advance their knowledge
+
+
+**********
+
