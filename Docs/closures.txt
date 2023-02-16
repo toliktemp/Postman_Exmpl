@@ -1,0 +1,37 @@
+n Python, a closure is a function object that remembers values in the enclosing scope even if they are not present in memory. A closure, unlike a plain function, allows the function to access those captured variables through the closure's reference to them, even when the function is invoked outside their scope.
+
+A closure is created when a nested function references a value from its enclosing function. The nested function is then returned from the enclosing function and can be assigned to a variable. This allows the closure to retain access to the captured values even after the enclosing function has finished executing.
+
+Here's an example that demonstrates the concept of closures in Python:
+
+
+def outer_function(x):
+    def inner_function(y):
+        return x + y
+    return inner_function
+
+closure = outer_function(10)
+print(closure(5)) # Output: 15
+
+
+In this example, the outer_function takes a single argument x and returns the inner_function. The inner_function takes a single argument y and returns the sum of x and y. When we call outer_function(10), it returns inner_function with x set to 10. We then assign this returned value to the variable closure and can call it as if it were a regular function. When we call closure(5), the inner_function is executed with y set to 5, and it returns the sum of x and y, which is 15.
+
+In this example, the inner_function is a closure because it remembers the value of x even after the outer_function has finished executing.
+
+
+
+
+Closures are a powerful concept in Python that are used in various situations, such as:
+
+Implementing decorators: Closures can be used to wrap a function and modify its behavior, which is useful in the implementation of decorators.
+
+Implementing function factories: Closures can be used to create functions with a specific pre-defined behavior. This can be useful when you want to create functions with similar behavior but with different arguments.
+
+Implementing stateful functions: Closures can be used to maintain the state of a function even after it has returned. This is useful when you want to implement functions that maintain some kind of internal state that can be modified over time.
+
+Implementing higher-order functions: Closures can be used to pass functions as arguments to other functions, which is useful when you want to abstract away specific behavior into reusable components.
+
+Implementing callbacks: Closures can be used to pass a function as a callback that can be called at a later time. This is useful when you want to implement asynchronous code or when you want to pass behavior to a function that is only known at runtime.
+
+These are just a few examples of where closures can be used in Python. It's a powerful concept that can be used in many different situations to make your code more reusable, composable, and readable.
+
